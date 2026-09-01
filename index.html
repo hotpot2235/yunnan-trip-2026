@@ -9,7 +9,7 @@
   html { scroll-behavior: smooth; }
   body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-         min-height: 100vh; padding: 72px 12px 20px; color: #333; }
+         min-height: 100vh; padding: 72px 12px 80px; color: #333; }
 
   /* ========== 顶部固定日期导航栏 ========== */
   .date-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 999;
@@ -23,16 +23,27 @@
               font-size: 12px; font-weight: 600; text-decoration: none;
               transition: all 0.2s; border: 1px solid rgba(255,255,255,0.2); }
   .date-btn:active { background: #fff; color: #667eea; transform: scale(0.93); }
+  .date-btn.active { background: #fff; color: #667eea; font-weight: 700; }
+  .day.active { display: block; animation: fadeIn 0.3s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* ========== 底部上一天/下一天 ========== */
+  .day-nav { display: flex; justify-content: space-between; gap: 12px; margin-top: 16px; }
+  .day-nav-btn { flex: 1; padding: 12px 16px; border-radius: 24px; border: none;
+                 background: rgba(255,255,255,0.2); color: #fff; font-size: 15px; font-weight: 600;
+                 cursor: pointer; backdrop-filter: blur(10px); transition: all 0.2s; }
+  .day-nav-btn:active { transform: scale(0.96); background: rgba(255,255,255,0.4); }
+  .day-nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
 
   /* ========== 封面 ========== */
-  .cover { text-align: center; padding: 24px 20px; color: #fff; margin-bottom: 20px; }
+  .cover { display: none; text-align: center; padding: 24px 20px; color: #fff; margin-bottom: 20px; }
   .cover h1 { font-size: 26px; margin-bottom: 8px; letter-spacing: 2px; }
   .cover p { font-size: 14px; opacity: 0.9; }
   .cover .dates { display: inline-block; background: rgba(255,255,255,0.2);
                   padding: 6px 14px; border-radius: 20px; margin-top: 10px; font-size: 13px; }
 
   /* ========== 每天卡片 ========== */
-  .day { background: #fff; border-radius: 16px; margin-bottom: 18px;
+  .day { display: none; background: #fff; border-radius: 16px; margin-bottom: 18px;
          box-shadow: 0 8px 24px rgba(0,0,0,0.12); overflow: hidden; }
   .day-head { background: linear-gradient(90deg, #ff9a9e, #fecfef);
               padding: 14px 18px; display: flex; justify-content: space-between;
@@ -863,29 +874,66 @@
   </div>
 </div>
 
+<div id="day-nav" class="day-nav">
+  <button class="day-nav-btn" id="prev-btn" onclick="switchDay(-1)">◀ 上一天</button>
+  <button class="day-nav-btn" id="next-btn" onclick="switchDay(1)">下一天 ▶</button>
+</div>
+
 <div class="footer">
   ✅ 点顶部日期按钮直接跳转 · 点"▶"展开详情 · 点"📍 高德导航"直接开始导航<br>
   📝 行程详情和吃饭地点后续慢慢补充，告诉我就行
 </div>
 
 <script>
+var allDays = document.querySelectorAll('.day');
+var allBtns = document.querySelectorAll('.date-btn');
+var currentIdx = 0;
+
+function showDay(idx) {
+  if (idx < 0 || idx >= allDays.length) return;
+  currentIdx = idx;
+  // 隐藏所有天
+  allDays.forEach(function(d) { d.classList.remove('active'); });
+  allBtns.forEach(function(b) { b.classList.remove('active'); });
+  // 显示当前天
+  allDays[idx].classList.add('active');
+  allBtns[idx].classList.add('active');
+  // 刷新当前天的面板（保持全部收起）
+  allDays[idx].querySelectorAll('.panel').forEach(function(p) { p.classList.remove('open'); });
+  // 更新底部按钮状态
+  document.getElementById('prev-btn').disabled = (idx === 0);
+  document.getElementById('next-btn').disabled = (idx === allDays.length - 1);
+  // 滚动到顶部
+  window.scrollTo(0, 0);
+}
+
+function switchDay(dir) {
+  showDay(currentIdx + dir);
+}
+
+// 初始化
+showDay(0);
+
+// 折叠面板点击
 document.querySelectorAll('.panel-header').forEach(function(header) {
   header.addEventListener('click', function() {
     this.parentElement.classList.toggle('open');
   });
 });
+
+// 顶部日期按钮点击
 document.querySelectorAll('.date-btn').forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    document.querySelectorAll('.date-btn').forEach(function(b) {
-      b.style.background = ''; b.style.color = '';
-    });
-    this.style.background = '#fff'; this.style.color = '#667eea';
-    var dayId = this.getAttribute('href').substring(1);
-    var day = document.getElementById(dayId);
-    if (day) {
-      day.querySelectorAll('.panel').forEach(function(p) { p.classList.remove('open'); });
-    }
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    var idx = Array.prototype.indexOf.call(allBtns, this);
+    showDay(idx);
   });
+});
+
+// 键盘左右箭头切换
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'ArrowLeft') switchDay(-1);
+  if (e.key === 'ArrowRight') switchDay(1);
 });
 </script>
 
