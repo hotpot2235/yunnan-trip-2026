@@ -884,8 +884,6 @@ document.querySelectorAll('.date-btn').forEach(function(btn) {
     var day = document.getElementById(dayId);
     if (day) {
       day.querySelectorAll('.panel').forEach(function(p) { p.classList.remove('open'); });
-      var tp = day.querySelector('.panel.transport');
-      if (tp) tp.classList.add('open');
     }
   });
 });
