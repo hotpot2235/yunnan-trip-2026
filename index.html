@@ -110,7 +110,25 @@
                         font-size: 11px; padding: 5px 11px; margin-top: 6px; }
 
   .detail-placeholder { background: #f5f5f5; border: 2px dashed #ccc; border-radius: 8px;
-                        padding: 16px; text-align: center; color: #999; font-size: 13px; }
+                       padding: 16px; text-align: center; color: #999; font-size: 13px; }
+
+  /* ========== 文海环湖路线图 ========== */
+  .map-wrap { position: relative; width: 100%; border-radius: 10px; overflow: hidden;
+              border: 2px solid #e0e0e0; margin: 6px 0 10px; }
+  .map-wrap img { display: block; width: 100%; height: auto; }
+  .map-pin { position: absolute; width: 26px; height: 26px; border-radius: 50%;
+             color: #fff; font-size: 13px; font-weight: 700; display: flex;
+             align-items: center; justify-content: center; text-decoration: none;
+             transform: translate(-50%,-50%); box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+             border: 2px solid #fff; z-index: 2; }
+  .map-pin:active { transform: translate(-50%,-50%) scale(0.9); }
+  .map-pin.blue  { background: #1677ff; }
+  .map-pin.orange{ background: #ff9900; }
+  .map-pin.pink  { background: #e91e63; }
+  .map-arrow { position: absolute; color: #d32f2f; font-size: 12px; font-weight: 700;
+               background: rgba(255,255,255,0.85); padding: 3px 8px; border-radius: 12px;
+               z-index: 1; white-space: nowrap; box-shadow: 0 1px 4px rgba(0,0,0,0.2); }
+  .map-legend { font-size: 11px; color: #888; margin-top: 2px; }
 
   .footer { text-align: center; padding: 16px; color: #fff; font-size: 11px; opacity: 0.7; }
 </style>
@@ -591,8 +609,21 @@
     </div>
 
     <div class="panel detail">
-      <div class="panel-header">📝 环湖徒步7点位（顺时针·约3h） <span class="arrow">▶</span></div>
+      <div class="panel-header">📝 环湖徒步7点位（顺时针·约3h·点地图气泡可导航） <span class="arrow">▶</span></div>
       <div class="panel-body">
+        <div class="map-wrap">
+          <img src="assets/wenhai-map.png" alt="文海村环湖徒步路线图">
+          <div class="map-arrow" style="top:3%;left:26%;">🏔️ 玉龙雪山方向（正北）</div>
+          <div class="map-arrow" style="bottom:4%;right:3%;">⬇ 白沙·束河方向</div>
+          <a class="map-pin blue"   style="left:81.3%;top:48.2%;" href="https://uri.amap.com/navigation?to=100.171212,26.978613,野鹿子咖啡文海村&mode=car&src=云南自驾&coordinate=gaode&callnative=1">1</a>
+          <a class="map-pin orange" style="left:78.7%;top:55.4%;" href="https://uri.amap.com/navigation?to=100.171212,26.978613,野鹿子咖啡文海村&mode=car&src=云南自驾&coordinate=gaode&callnative=1">2</a>
+          <a class="map-pin pink"   style="left:29.3%;top:23.2%;" href="https://uri.amap.com/navigation?to=100.158575,26.983975,文海旅游骑马场&mode=car&src=云南自驾&coordinate=gaode&callnative=1">3</a>
+          <a class="map-pin pink"   style="left:20.0%;top:37.5%;" href="https://uri.amap.com/navigation?to=100.158203,26.981779,丽思漫溯野雪山野奢度假酒店&mode=car&src=云南自驾&coordinate=gaode&callnative=1">4</a>
+          <a class="map-pin pink"   style="left:14.7%;top:67.9%;" href="https://uri.amap.com/marker?position=100.157985,26.978325&name=文海日照金山观赏点&src=云南自驾&coordinate=gaode&callnative=1">5</a>
+          <a class="map-pin pink"   style="left:30.7%;top:90.2%;" href="https://uri.amap.com/marker?position=100.160722,26.975863&name=文海草原骏马拍摄机位&src=云南自驾&coordinate=gaode&callnative=1">6</a>
+          <a class="map-pin blue"   style="left:78.7%;top:88.4%;" href="https://uri.amap.com/search?keyword=白沙古镇&city=丽江&src=云南自驾&callnative=1">7</a>
+        </div>
+        <div class="map-legend">🔵 出入口　🟠 咖啡　🩷 雪山拍照机位　红线=顺时针环湖徒步路线（底图：高德地图）</div>
         <div class="stop">
           <div class="stop-title">① 入口 <span class="tag">停车</span></div>
           <div class="desc">野鹿子咖啡旁停车，开始顺时针环湖</div>
