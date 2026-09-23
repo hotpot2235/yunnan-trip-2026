@@ -101,6 +101,18 @@
          font-size: 12px; color: #795548; border-radius: 0 8px 8px 0; margin-top: 8px; }
   .warn { background: #ffebee; border-left: 3px solid #f44336; padding: 8px 12px;
           font-size: 12px; color: #c62828; border-radius: 0 8px 8px 0; margin-top: 8px; }
+  /* 醒目的注意事项归集框（放在行程详情tab顶部） */
+  .notice-box { border: 2px solid #f44336; border-radius: 10px; overflow: hidden; margin: 12px 0; }
+  .notice-box .notice-head { background: linear-gradient(135deg,#ff5722,#f44336); color:#fff;
+          font-weight: 700; font-size: 13.5px; padding: 9px 12px; }
+  .notice-box .notice-body { background: #fff4f2; padding: 6px 12px; }
+  .notice-box .notice-body > div { font-size: 12.5px; color: #b71c1c; font-weight: 600;
+          line-height: 1.7; padding: 6px 0 6px 2px; border-bottom: 1px dashed #ffcdd2; }
+  .notice-box .notice-body > div:last-child { border-bottom: none; }
+  .notice-box.tips { border-color: #ffa000; }
+  .notice-box.tips .notice-head { background: linear-gradient(135deg,#ffb300,#fb8c00); }
+  .notice-box.tips .notice-body { background: #fffdf3; }
+  .notice-box.tips .notice-body > div { color: #7a5c00; font-weight: 500; border-bottom-color: #ffe0b2; }
   .plan-b { background: #f0f4ff; border-radius: 8px; padding: 10px; font-size: 12px; color: #555; }
   .plan-b strong { color: #1677ff; }
   .charge { background: #e8f5e9; border-left: 3px solid #27ae60; padding: 8px 12px;
@@ -175,10 +187,6 @@
       <div class="panel-header">🚗 导航地点 <span class="arrow">▶</span></div>
       <div class="panel-body">
         <div class="stop">
-          <div class="stop-title">🏠 出发：石家庄家 <span class="tag home">家</span></div>
-          <a class="nav-btn home" href="https://uri.amap.com/navigation?to=114.491958,37.983935,石家庄家&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 导航回家</a>
-        </div>
-        <div class="stop">
           <div class="stop-title">🏨 乙龙酒店（西安灞桥区东城大道店） <span class="tag hotel">住宿</span></div>
           <div class="desc">¥257 · 高速口旁，方便明天一早继续南下</div>
           <a class="nav-btn" href="https://uri.amap.com/navigation?to=109.091256,34.317057,乙龙酒店&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航到酒店</a>
@@ -191,6 +199,12 @@
     <div class="panel detail">
       <div class="panel-header">📝 行程详情 & 注意事项 <span class="arrow">▶</span></div>
       <div class="panel-body">
+        <div class="notice-box tips">
+          <div class="notice-head">💡 小贴士</div>
+          <div class="notice-body">
+            <div>避开郑州国庆拥堵，走 G5 京昆直下。到西安吃个夜宵就睡，第二天 5 点还要出发。</div>
+          </div>
+        </div>
         <div class="stop">
           <div class="stop-title">📋 路线</div>
           <div class="desc">石家庄 → G20青银高速 → G5京昆高速 → 西安灞桥出口</div>
@@ -199,7 +213,6 @@
           <div class="stop-title">⏰ 时间安排</div>
           <div class="desc">13:00 石家庄出发 → 服务区休息 2-3 次 → 约 22:00-22:30 到西安</div>
         </div>
-        <div class="tip">💡 避开郑州国庆拥堵，走 G5 京昆直下。到西安吃个夜宵就睡，第二天 5 点还要出发。</div>
       </div>
     </div>
 
@@ -237,6 +250,12 @@
     <div class="panel detail">
       <div class="panel-header">📝 行程详情 & 注意事项 <span class="arrow">▶</span></div>
       <div class="panel-body">
+        <div class="notice-box">
+          <div class="notice-head">⚠️ 重要注意事项（务必看）</div>
+          <div class="notice-body">
+            <div>🚗 全程最长最累的一天！纯驾驶 14.2h，含休息约 16h。建议两人轮流开，每 2h 必须休息。</div>
+          </div>
+        </div>
         <div class="stop">
           <div class="stop-title">📋 路线</div>
           <div class="desc">西安 → G5京昆高速 → 汉中 → 广元 → 绵阳 → 成都绕城 → G5 → 西昌</div>
@@ -245,7 +264,6 @@
           <div class="stop-title">⏰ 时间安排</div>
           <div class="desc">5:00 出发 → 服务区休息 4 次（汉中/广元/绵阳/成都）→ 约 21:30-22:00 到西昌</div>
         </div>
-        <div class="warn">⚠️ 全程最长最累的一天！纯驾驶 14.2h，含休息约 16h。建议两人轮流开，每 2h 必须休息。</div>
       </div>
     </div>
 
@@ -286,16 +304,16 @@
       <div class="panel-header">🚗 导航地点 <span class="arrow">▶</span></div>
       <div class="panel-body">
         <div class="stop">
-          <div class="stop-title">🏞️ 泸沽湖景区（大洛水） <span class="tag view">景点</span></div>
-          <div class="desc">门票 70 元/人，下午环湖</div>
-          <a class="nav-btn" href="https://uri.amap.com/navigation?to=100.796485,27.661098,泸沽湖大洛水&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航到泸沽湖</a>
-        </div>
-        <div class="stop">
           <div class="stop-title">🏨 白马轻奢湖景民宿 <span class="tag hotel">住宿</span></div>
           <div class="desc">2晚¥1295 · 湖景房，推窗见湖</div>
           <a class="nav-btn" href="https://uri.amap.com/navigation?to=100.796485,27.661098,白马轻奢湖景民宿&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航到民宿</a>
           <div class="charge">⚡ <strong>充电：</strong>白马轻奢民宿内慢充（酒店自有桩，零距离，过夜慢充最方便）</div>
           <a class="nav-btn charge-btn" href="https://uri.amap.com/navigation?to=100.796485,27.661098,白马轻奢民宿充电桩&mode=car&src=云南自驾&coordinate=gaode&callnative=1">⚡ 导航到民宿充电桩</a>
+        </div>
+        <div class="stop">
+          <div class="stop-title">🏞️ 泸沽湖景区（大洛水） <span class="tag view">景点</span></div>
+          <div class="desc">门票 70 元/人，下午环湖</div>
+          <a class="nav-btn" href="https://uri.amap.com/navigation?to=100.796485,27.661098,泸沽湖大洛水&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航到泸沽湖</a>
         </div>
       </div>
     </div>
@@ -303,6 +321,12 @@
     <div class="panel detail">
       <div class="panel-header">📝 行程详情 & 注意事项 <span class="arrow">▶</span></div>
       <div class="panel-body">
+        <div class="notice-box tips">
+          <div class="notice-head">💡 小贴士</div>
+          <div class="notice-body">
+            <div>G348 国道山路弯多，均速仅 ~41km/h，别开太快。下午到了直接环湖。</div>
+          </div>
+        </div>
         <div class="stop">
           <div class="stop-title">📋 路线</div>
           <div class="desc">西昌邛海 → G5京昆高速(南下15km) → 西昌南收费站下高速 → G348国道 → 盐源 → 泸沽湖</div>
@@ -311,7 +335,6 @@
           <div class="stop-title">⏰ 时间安排</div>
           <div class="desc">8:00 出发 → 11:00 盐源吃午饭 → 12:00 继续 → 约 15:30 到泸沽湖</div>
         </div>
-        <div class="tip">💡 G348 国道山路弯多，均速仅 ~41km/h，别开太快。下午到了直接环湖。</div>
       </div>
     </div>
 
@@ -386,8 +409,13 @@
     <div class="panel detail">
       <div class="panel-header">📝 行程详情 & 注意事项 <span class="arrow">▶</span></div>
       <div class="panel-body">
+        <div class="notice-box tips">
+          <div class="notice-head">💡 小贴士</div>
+          <div class="notice-body">
+            <div>🐕 走婚桥和草海最适合遛狗拍照！猪槽船狗不能上。</div>
+          </div>
+        </div>
         <div class="detail-placeholder">（待补充：环湖具体路线、坐船点、拍照点、时间安排等）</div>
-        <div class="tip">🐕 走婚桥和草海最适合遛狗拍照！猪槽船狗不能上。</div>
       </div>
     </div>
 
@@ -447,11 +475,6 @@
     <div class="panel transport">
       <div class="panel-header">🚗 导航地点 <span class="arrow">▶</span></div>
       <div class="panel-body">
-        <div class="stop">
-          <div class="stop-title">🏘️ 束河古镇 <span class="tag view">景点</span></div>
-          <div class="desc">比丽江古城清静，适合散步遛狗</div>
-          <a class="nav-btn" href="https://uri.amap.com/navigation?to=100.206366,26.925130,束河古镇&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航到束河</a>
-        </div>
         <div class="stop">
           <div class="stop-title">🏨 醉花堂客栈（束河古镇店） <span class="tag hotel">住宿</span></div>
           <div class="desc">3晚¥948 · 就在古镇里</div>
@@ -538,15 +561,17 @@
     <div class="panel detail">
       <div class="panel-header">📝 行程详情 & 注意事项 <span class="arrow">▶</span></div>
       <div class="panel-body">
+        <div class="notice-box">
+          <div class="notice-head">⚠️ 重要注意事项（务必看）</div>
+          <div class="notice-body">
+            <div>🏔️ 云杉坪海拔 3200m，比古城高 800m。慢点走，带氧气瓶，别剧烈运动，注意高反。</div>
+            <div>🐕 索道不让带狗，早上放民宿寄养半天，下午 4 点返回束河接狗。</div>
+          </div>
+        </div>
         <div class="stop">
           <div class="stop-title">⏰ 时间安排</div>
           <div class="desc">7:30 束河出发 → 8:25 到雪山 → 9:00 云杉坪 → 13:00 蓝月谷 → 14:00 取车 → 15:00 回束河（下山途中/到束河后吃午饭，约14:00-15:00）</div>
         </div>
-        <div class="stop">
-          <div class="stop-title">⚠️ 高反注意</div>
-          <div class="desc">云杉坪海拔 3200m，比古城高 800m。慢点走，带氧气瓶，别剧烈运动。</div>
-        </div>
-        <div class="warn">🐕 索道不让带狗，放民宿寄养半天。下午 4 点返回束河接狗。</div>
       </div>
     </div>
 
@@ -652,7 +677,12 @@
           <div class="stop-title">⑦ 出口→白沙古镇 <span class="tag">下山</span></div>
           <div class="desc">东南侧出口，下山直通白沙</div>
         </div>
-        <div class="tip">🏔️ <b>给爸妈的雪山方位提示：</b>玉龙雪山在湖的<b>正北→西北方向</b>（环湖左半圈）。③④⑤⑥四个点全程正对雪山，<b>拍照时面朝湖对岸偏左（西北）抬头看</b>。狗子草甸随便疯跑，几乎没有游客！</div>
+        <div class="notice-box tips" style="margin-top:12px;">
+          <div class="notice-head">📸 拍照提示（给爸妈）</div>
+          <div class="notice-body">
+            <div>🏔️ 玉龙雪山在湖的<b>正北→西北方向</b>（环湖左半圈）。③④⑤⑥四个点全程正对雪山，<b>拍照时面朝湖对岸偏左（西北）抬头看</b>。狗子草甸随便疯跑，几乎没有游客！</div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -661,7 +691,7 @@
       <div class="panel-body">
         <div class="stop">
           <div class="stop-title">🏠 ① 蓝房子乡村厨房 <span class="tag food">炒菜</span></div>
-          <div class="desc">文海村里的农家乐，吃炒菜。**高德上没有收录这家店，到村里打听"蓝房子乡村厨房"即可，认准蓝色外墙的房子**</div>
+          <div class="desc">文海村44号，村里的农家乐，吃炒菜。**高德上没有收录这家店，到村里打听"蓝房子乡村厨房"即可，认准蓝色外墙的房子**</div>
         </div>
         <div class="stop">
           <div class="stop-title">🐔 ② 牧野农舍 <span class="tag food">火塘土鸡</span></div>
@@ -733,6 +763,15 @@
     <div class="panel detail">
       <div class="panel-header">📝 行程详情 & 注意事项 <span class="arrow">▶</span></div>
       <div class="panel-body">
+        <div class="notice-box">
+          <div class="notice-head">⚠️ 重要注意事项（务必看）</div>
+          <div class="notice-body">
+            <div>🚗 <b>满档日：</b>全天车程 5.5h，虎香公路弯多坡陡，放慢车速、弯道鸣笛、注意落石。</div>
+            <div>⏰ <b>16:30 从白水台发车是硬时间点</b>，避免摸黑走山路！</div>
+            <div>🏔️ 香格里拉海拔 3300m！到得晚，当晚不洗头洗澡，慢走多喝水，别剧烈运动。</div>
+            <div>🚫 <b>防骗：</b>不要买独克宗古城巷子里老阿姨兜售的"牛肉干"——给你尝的是牛肉干，<b>实际买到手的是鸭肉干</b>！（两晚都适用）</div>
+          </div>
+        </div>
         <div class="stop">
           <div class="stop-title">📋 路线（虎香公路环线，不走回头路）</div>
           <div class="desc">束河 → G5611/G0613高速(龙蟠互通下) → 虎跳峡游客中心 → 检票处 → 虎香公路(东环线)经三坝 → 白水台 → 虎香公路继续北上 → 香格里拉独克宗</div>
@@ -749,8 +788,6 @@
           <div class="stop-title">💧 白水台玩法</div>
           <div class="desc">"仙人遗田"钙化池，中国最大华泉台地，湛蓝池水彩照出片。木栈道缓坡上山20-40min，**老人走不动可骑马上观景台（约50-100元可砍价）**。钙化池非常脆弱，**严禁踩踏**，违者罚款。</div>
         </div>
-        <div class="warn">⚠️ <b>满档日：</b>全天车程5.5h，虎香公路弯多坡陡，放慢车速、弯道鸣笛、注意落石。<b>16:30从白水台发车是硬时间点</b>，避免摸黑走山路！</div>
-        <div class="warn">⚠️ 香格里拉海拔 3300m！到得晚，当晚不洗头洗澡，慢走多喝水，别剧烈运动。</div>
       </div>
     </div>
 
@@ -789,7 +826,6 @@
           <div class="desc">古城东门达拉廊6号·⭐4.3·人均¥23·08:00-22:00</div>
           <a class="nav-btn" href="https://uri.amap.com/navigation?to=99.711546,27.810781,云烧记&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航③云烧记</a>
         </div>
-        <div class="warn">🚫 <b>防坑：</b>不要买古城巷子里老阿姨兜售的"牛肉干"——<b>给你尝的是牛肉干，实际买到手的是鸭肉干</b>！</div>
         <div class="tip">🛒 <b>若明天（10/11）选老药山徒步：</b>今晚吃完饭顺便在古城超市/店里买好<b>明天中午的干粮和水</b>带上山，山上无信号无补给。选纳帕海则不用准备。</div>
       </div>
     </div>
@@ -825,13 +861,20 @@
     <div class="panel detail">
       <div class="panel-header">📝 行程详情 & 注意事项 <span class="arrow">▶</span></div>
       <div class="panel-body">
+        <div class="notice-box">
+          <div class="notice-head">⚠️ 重要注意事项（务必看）</div>
+          <div class="notice-body">
+            <div>🥾 <b>选老药山方案B：</b>山上无信号无补给，必须提前联系当地向导（¥500/团），带足水和能量食品、10号晚买好干粮；最高海拔3800m，<b>前一晚高反就别选</b>。</div>
+            <div>🚫 <b>防骗：</b>古城巷子里老阿姨兜售的"牛肉干"别买——给你尝的是牛肉干，<b>实际到手的是鸭肉干</b>！</div>
+          </div>
+        </div>
         <div class="stop">
           <div class="stop-title">方案 A · 纳帕海草原</div>
           <div class="desc">独克宗古城西北约 8km，开车 15min。骑马、电瓶车环湖可选，狗子在草原上随便跑。</div>
         </div>
         <div class="stop">
           <div class="stop-title">方案 B · 老药山徒步</div>
-          <div class="desc">独克宗古城 → G0613 南下 → 小中甸出口 → 乡道（约 115km / 2h 单程）。小环线徒步 4-5km，最高 3800m。<br>⚠️ 需提前联系当地向导（¥500/团），无信号无补给，带足水和能量食品；<b>10号晚上在古城买好干粮，11号中午在山上野餐</b>。</div>
+          <div class="desc">独克宗古城 → G0613 南下 → 小中甸出口 → 乡道（约 115km / 2h 单程）。小环线徒步 4-5km，最高 3800m，<b>10号晚上在古城买好干粮，11号中午在山上野餐</b>。</div>
         </div>
       </div>
     </div>
@@ -877,7 +920,6 @@
           <div class="desc">小龟山神泉巷35栋·⭐4.5·人均¥58·**17:00才开门**到凌晨3点</div>
           <a class="nav-btn" href="https://uri.amap.com/navigation?to=99.708864,27.826483,六百万烧烤&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航④六百万烧烤</a>
         </div>
-        <div class="warn">🚫 依旧提醒：古城巷子里老阿姨卖的"牛肉干"别买，尝的是牛肉干、到手是鸭肉干。</div>
       </div>
     </div>
   </div>
@@ -896,16 +938,16 @@
       <div class="panel-header">🚗 导航地点 <span class="arrow">▶</span></div>
       <div class="panel-body">
         <div class="stop">
-          <div class="stop-title">🌊 滇池海埂大坝 <span class="tag view">景点</span></div>
-          <div class="desc">下午到昆明后遛狗散步，看红嘴鸥（10 月底来了），免费</div>
-          <a class="nav-btn" href="https://uri.amap.com/navigation?to=102.650825,24.973588,滇池海埂大坝&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航到滇池</a>
-        </div>
-        <div class="stop">
           <div class="stop-title">🏨 漫度听风民宿（滇池店·呈贡） <span class="tag hotel">住宿</span></div>
           <div class="desc">¥460 · 明天上 G85 渝昆高速去重庆方便</div>
           <a class="nav-btn" href="https://uri.amap.com/navigation?to=102.652525,24.985225,漫度听风民宿&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航到民宿</a>
           <div class="charge">⚡ <strong>充电：</strong>酒店无桩，3 选 1：<br>① 昆配观景路站(~322m)⚠️9-16点<br>② 特来电站(~325m) 24h<br>③ 滴滴充电站(~803m) 24h</div>
           <a class="nav-btn charge-btn" href="https://uri.amap.com/navigation?to=102.650816,24.982513,昆配观景路充电站&mode=car&src=云南自驾&coordinate=gaode&callnative=1">⚡ 导航到昆配充电站</a>
+        </div>
+        <div class="stop">
+          <div class="stop-title">🌊 滇池海埂大坝 <span class="tag view">景点</span></div>
+          <div class="desc">下午到昆明后遛狗散步，看红嘴鸥（10 月底来了），免费</div>
+          <a class="nav-btn" href="https://uri.amap.com/navigation?to=102.650825,24.973588,滇池海埂大坝&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航到滇池</a>
         </div>
       </div>
     </div>
@@ -913,6 +955,12 @@
     <div class="panel detail">
       <div class="panel-header">📝 行程详情 & 注意事项 <span class="arrow">▶</span></div>
       <div class="panel-body">
+        <div class="notice-box tips">
+          <div class="notice-head">💡 小贴士</div>
+          <div class="notice-body">
+            <div>海拔降到 1900m，休整舒服。昆明气温比香格里拉高 5-8 度。</div>
+          </div>
+        </div>
         <div class="stop">
           <div class="stop-title">📋 路线</div>
           <div class="desc">香格里拉 → G0613 → G5611大丽高速 → G56杭瑞高速 → 昆明呈贡出口</div>
@@ -921,7 +969,6 @@
           <div class="stop-title">⏰ 时间安排</div>
           <div class="desc">8:00 出发 → 服务区休息 2-3 次 → 约 16:00 到昆明 → 滇池散步 → 民宿安顿</div>
         </div>
-        <div class="tip">💡 海拔降到 1900m，休整舒服。昆明气温比香格里拉高 5-8 度。</div>
       </div>
     </div>
 
@@ -959,6 +1006,12 @@
     <div class="panel detail">
       <div class="panel-header">📝 行程详情 & 注意事项 <span class="arrow">▶</span></div>
       <div class="panel-body">
+        <div class="notice-box tips">
+          <div class="notice-head">💡 小贴士</div>
+          <div class="notice-body">
+            <div>全程第二长的一天，但下午 4:30 就到，吃完火锅还能散步。</div>
+          </div>
+        </div>
         <div class="stop">
           <div class="stop-title">📋 路线</div>
           <div class="desc">昆明呈贡 → G85渝昆高速 → 昭通 → 宜宾 → 重庆</div>
@@ -967,7 +1020,6 @@
           <div class="stop-title">⏰ 时间安排</div>
           <div class="desc">5:00 出发 → 服务区休息 3-4 次 → 约 16:30 到重庆 → 酒店放行李 → 出去吃饭</div>
         </div>
-        <div class="tip">💡 全程第二长的一天，但下午 4:30 就到，吃完火锅还能散步。</div>
       </div>
     </div>
 
@@ -1013,16 +1065,16 @@
       <div class="panel-header">🚗 导航地点 <span class="arrow">▶</span></div>
       <div class="panel-body">
         <div class="stop">
-          <div class="stop-title">🏞️ 恩施大峡谷（云龙地缝） <span class="tag view">景点</span></div>
-          <div class="desc">下午玩 2-3h 轻松步道。门票 155 元/人。</div>
-          <a class="nav-btn" href="https://uri.amap.com/navigation?to=109.196730,30.409540,恩施大峡谷云龙地缝&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航到云龙地缝</a>
-        </div>
-        <div class="stop">
           <div class="stop-title">🏨 青崖之上民宿（大峡谷游客中心店） <span class="tag hotel">住宿</span></div>
           <div class="desc">2晚¥774 · 含 2 份早餐</div>
           <a class="nav-btn" href="https://uri.amap.com/navigation?to=109.194718,30.410951,青崖之上民宿&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航到民宿</a>
           <div class="charge">⚡ <strong>充电：</strong>蔚景云·大峡谷敬宾客栈站（047乡道，民宿隔壁~30m）·24h</div>
           <a class="nav-btn charge-btn" href="https://uri.amap.com/navigation?to=109.194855,30.410765,蔚景云大峡谷敬宾客栈充电站&mode=car&src=云南自驾&coordinate=gaode&callnative=1">⚡ 导航到敬宾客栈充电站</a>
+        </div>
+        <div class="stop">
+          <div class="stop-title">🏞️ 恩施大峡谷（云龙地缝） <span class="tag view">景点</span></div>
+          <div class="desc">下午玩 2-3h 轻松步道。门票 155 元/人。</div>
+          <a class="nav-btn" href="https://uri.amap.com/navigation?to=109.196730,30.409540,恩施大峡谷云龙地缝&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航到云龙地缝</a>
         </div>
       </div>
     </div>
@@ -1030,11 +1082,16 @@
     <div class="panel detail">
       <div class="panel-header">📝 行程详情 & 注意事项 <span class="arrow">▶</span></div>
       <div class="panel-body">
+        <div class="notice-box">
+          <div class="notice-head">⚠️ 重要注意事项（务必看）</div>
+          <div class="notice-body">
+            <div>🐕 恩施大峡谷景区不让带狗，白天放民宿寄养。</div>
+          </div>
+        </div>
         <div class="stop">
           <div class="stop-title">⏰ 时间安排</div>
           <div class="desc">8:00 出发 → 约 12:00 到大峡谷吃午饭 → 14:00-17:00 云龙地缝 → 民宿安顿</div>
         </div>
-        <div class="warn">🐕 景区不让带狗，放民宿寄养。</div>
       </div>
     </div>
 
@@ -1073,11 +1130,16 @@
     <div class="panel detail">
       <div class="panel-header">📝 行程详情 & 注意事项 <span class="arrow">▶</span></div>
       <div class="panel-body">
+        <div class="notice-box">
+          <div class="notice-head">⚠️ 重要注意事项（务必看）</div>
+          <div class="notice-body">
+            <div>🐕 景区不让带狗，全天放民宿寄养。</div>
+          </div>
+        </div>
         <div class="stop">
           <div class="stop-title">⚠️ 徒步准备</div>
           <div class="desc">带好水、帽子、防晒、轻便登山鞋。全程约 7km，台阶多，中途有索道可坐。</div>
         </div>
-        <div class="warn">🐕 景区不让带狗，放民宿寄养一天。</div>
       </div>
     </div>
 
@@ -1103,6 +1165,13 @@
       <div class="panel-header">🚗 导航地点 <span class="arrow">▶</span></div>
       <div class="panel-body">
         <div class="stop">
+          <div class="stop-title">🏨 良驿寻迹中式庭院民宿 <span class="tag hotel">住宿</span></div>
+          <div class="desc">¥429 · 洛邑古城十字街夜市店，步行即夜市</div>
+          <a class="nav-btn" href="https://uri.amap.com/navigation?to=112.482491,34.682704,良驿寻迹民宿&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航到民宿</a>
+          <div class="charge">⚡ <strong>充电：</strong>怪兽充电站（文化街7号，洛邑古城地铁站A1口步行130m，比酒店还近~150m）·24h</div>
+          <a class="nav-btn charge-btn" href="https://uri.amap.com/navigation?to=112.482491,34.682704,怪兽充电站文化街&mode=car&src=云南自驾&coordinate=gaode&callnative=1">⚡ 导航到充电站</a>
+        </div>
+        <div class="stop">
           <div class="stop-title">🏮 十字街夜市 <span class="tag food">吃饭</span></div>
           <div class="desc">住老城区，出门就是夜市！不翻汤、牛肉汤、洛阳水席</div>
           <a class="nav-btn" href="https://uri.amap.com/navigation?to=112.478749,34.683653,洛阳十字街夜市&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航到夜市</a>
@@ -1112,20 +1181,18 @@
           <div class="desc">晚上看灯光秀。10 月 16 日周五，场次多。</div>
           <a class="nav-btn" href="https://uri.amap.com/navigation?to=112.460886,34.676011,应天门&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航到应天门</a>
         </div>
-        <div class="stop">
-          <div class="stop-title">🏨 良驿寻迹中式庭院民宿 <span class="tag hotel">住宿</span></div>
-          <div class="desc">¥429 · 洛邑古城十字街夜市店，步行即夜市</div>
-          <a class="nav-btn" href="https://uri.amap.com/navigation?to=112.482491,34.682704,良驿寻迹民宿&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航到民宿</a>
-          <div class="charge">⚡ <strong>充电：</strong>怪兽充电站（文化街7号，洛邑古城地铁站A1口步行130m，比酒店还近~150m）·24h</div>
-          <a class="nav-btn charge-btn" href="https://uri.amap.com/navigation?to=112.482491,34.682704,怪兽充电站文化街&mode=car&src=云南自驾&coordinate=gaode&callnative=1">⚡ 导航到充电站</a>
-        </div>
-        <div class="tip">💡 晚上到洛阳先放行李，然后夜市吃饭+应天门看灯，完美的一晚！</div>
       </div>
     </div>
 
     <div class="panel detail">
       <div class="panel-header">📝 行程详情 & 注意事项 <span class="arrow">▶</span></div>
       <div class="panel-body">
+        <div class="notice-box tips">
+          <div class="notice-head">💡 小贴士</div>
+          <div class="notice-body">
+            <div>晚上到洛阳先放行李，然后夜市吃饭+应天门看灯，完美的一晚！</div>
+          </div>
+        </div>
         <div class="stop">
           <div class="stop-title">⏰ 时间安排</div>
           <div class="desc">8:00 出发 → 约 17:30 到洛阳 → 酒店放行李 → 18:30 十字街夜市吃饭 → 20:00 应天门看夜景灯光秀 → 21:30 回酒店</div>
