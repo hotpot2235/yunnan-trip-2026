@@ -89,6 +89,11 @@
   .tag.view  { background: #9b59b6; }
   .tag.home  { background: #e67e22; }
   .tag.photo { background: #e91e63; }
+  .tag.rec { background: linear-gradient(135deg,#ff5858,#ff9500); font-weight: 700;
+             box-shadow: 0 1px 4px rgba(255,100,0,0.45); }
+  .stop.rec-stop { background: linear-gradient(180deg,#fff8f0,#fffdf9);
+                   border: 1.5px solid #ffb066; border-radius: 10px;
+                   padding: 10px 12px; margin: 10px 0; }
   .desc { font-size: 12px; color: #666; line-height: 1.6; margin-bottom: 6px; }
 
   .nav-btn { display: inline-block; background: #1677ff; color: #fff;
@@ -385,31 +390,81 @@
   </div>
   <div class="day-body">
     <div class="panel transport">
-      <div class="panel-header">🚗 导航地点 <span class="arrow">▶</span></div>
+      <div class="panel-header">🚗 导航地点（按①→⑨顺序·顺时针环湖） <span class="arrow">▶</span></div>
       <div class="panel-body">
         <div class="stop">
-          <div class="stop-title">🚶 环湖起点（大洛水） <span class="tag view">景点</span></div>
-          <div class="desc">大洛水 → 里格半岛 → 女神湾 → 草海 → 走婚桥，全程约 70km</div>
-          <a class="nav-btn" href="https://uri.amap.com/navigation?to=100.796485,27.661098,泸沽湖大洛水&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航环湖起点</a>
+          <div class="stop-title">① 🛶 三家村码头（早上去坐猪槽船） <span class="tag view">8:30</span></div>
+          <div class="desc">离民宿最近的码头，开车约 1.2km/3 分钟·<b>包猪槽船 200-240 元/船·1.5 小时·可以带狗</b>（牵好绳，提前让民宿老板帮忙约船）</div>
+          <a class="nav-btn" href="https://uri.amap.com/navigation?to=100.785856,27.662534,泸沽湖三家村码头&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航到码头</a>
         </div>
         <div class="stop">
-          <div class="stop-title">🏨 回酒店：白马轻奢湖景民宿（第二晚） <span class="tag hotel">住宿</span></div>
-          <div class="desc">环湖结束回大洛水村民宿，车可停民宿（自有慢充桩）</div>
+          <div class="stop-title">② 🌾 草海 → 走婚桥 <span class="tag view">遛狗最佳</span></div>
+          <div class="desc">从码头沿环湖公路向东，经浪放、普洛两村湖湾（沿途随时停车拍照）约 13km/25min·草海栈道+走婚桥玩约 1h</div>
+          <a class="nav-btn" href="https://uri.amap.com/navigation?to=100.876947,27.709760,泸沽湖走婚桥&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航到走婚桥</a>
+        </div>
+        <div class="stop">
+          <div class="stop-title">③ 🌅 女神湾 + 好人小吃（午饭） <span class="tag view">最静的湖湾</span></div>
+          <div class="desc">走婚桥走 021 乡道 11km/25min，<b>路窄弯多、是进出同一条的支线</b>，慢开·约 12:15 到，先逛湾再吃午饭</div>
+          <a class="nav-btn" href="https://uri.amap.com/navigation?to=100.806861,27.701319,泸沽湖女神湾&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航到女神湾</a>
+        </div>
+        <div class="stop">
+          <div class="stop-title">④ 💛 四川情人滩（洼垮码头）</div>
+          <div class="desc">女神湾折返后沿 221 省道 8km/16min·格桑花湖滩，玩约 30min</div>
+          <a class="nav-btn" href="https://uri.amap.com/navigation?to=100.817146,27.739791,洼垮情人滩码头&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航四川情人滩</a>
+        </div>
+        <div class="stop">
+          <div class="stop-title">⑤ 🪨 泸源崖</div>
+          <div class="desc">沿 221 省道向西 4km/9min·川滇交界处的湖水源头悬崖，玩约 20min</div>
+          <a class="nav-btn" href="https://uri.amap.com/navigation?to=100.782745,27.741412,泸源崖&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航到泸源崖</a>
+        </div>
+        <div class="stop">
+          <div class="stop-title">⑥ ⛰️ 尼塞村·格姆女神山 <span class="tag view">不坐索道</span></div>
+          <div class="desc">泸源崖向西 6km/10min·<b>索道不坐</b>（海拔3450m、往返1.5-2h、狗不能上），在尼塞村湖边拍女神山即可，约 25min</div>
+          <a class="nav-btn" href="https://uri.amap.com/navigation?to=100.759113,27.735671,尼塞村格姆女神山&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航到尼塞村</a>
+        </div>
+        <div class="stop">
+          <div class="stop-title">⑦ 🏝️ 里格半岛 <span class="tag view">两种玩法见详情</span></div>
+          <div class="desc">尼塞沿 307 省道向西 4km/10min 到观景台，再下山到半岛·玩 40-60min</div>
+          <a class="nav-btn" href="https://uri.amap.com/navigation?to=100.751663,27.727104,泸沽湖里格半岛&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航到里格半岛</a>
+        </div>
+        <div class="stop">
+          <div class="stop-title">⑧ 💙 云南情人滩（里拜情人滩）→ 大洛水码头</div>
+          <div class="desc">里格沿环湖公路南下，先到云南情人滩（约20min），再到 9km 外的大洛水码头逛约 50min</div>
+          <a class="nav-btn" href="https://uri.amap.com/navigation?to=100.750042,27.703251,里拜情人滩&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航云南情人滩</a>
+          <a class="nav-btn" href="https://uri.amap.com/navigation?to=100.774458,27.678417,大洛水码头&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航大洛水</a>
+        </div>
+        <div class="stop">
+          <div class="stop-title">⑨ 🏨 三家村 → 回白马轻奢民宿 <span class="tag hotel">住宿</span></div>
+          <div class="desc">大洛水沿湖滨路向东 4.3km/13min，路过三家村即回民宿·约 18:00 到·车停民宿自有慢充桩过夜</div>
           <a class="nav-btn" href="https://uri.amap.com/navigation?to=100.796485,27.661098,白马轻奢湖景民宿&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航回民宿</a>
         </div>
+        <div class="tip">📏 全程顺时针约 <b>60km</b>，纯驾驶约 2h15min，无折返（仅女神湾是进出同一条支线，多走约 12km）。浪放、普洛、三家村都是沿途经过的村子，不用单独导航。</div>
       </div>
     </div>
 
     <div class="panel detail">
-      <div class="panel-header">📝 行程详情 & 注意事项 <span class="arrow">▶</span></div>
+      <div class="panel-header">📝 全天时间安排 & 注意事项 <span class="arrow">▶</span></div>
       <div class="panel-body">
+        <div class="stop">
+          <div class="stop-title">⏰ 时间安排</div>
+          <div class="desc"><b>8:30-10:00 三家村码头坐猪槽船</b>（包船200-240/船·1.5h·带狗）→ 10:10 浪放、10:25 普洛沿途湖湾拍照 → <b>10:45 草海+走婚桥</b>约1h → 12:15 <b>女神湾</b>，12:30-13:30 好人小吃午饭 → 13:45 <b>四川情人滩</b>30min → 14:20 <b>泸源崖</b>20min → 14:50 <b>尼塞村</b>拍女神山25min → <b>15:20 里格半岛</b>40-60min → 16:30 <b>云南情人滩</b>20min → <b>17:00 大洛水码头</b>逛50min → 18:00 经三家村回民宿 → 19:00 大洛水晚饭</div>
+        </div>
+        <div class="stop">
+          <div class="stop-title">🛶 猪槽船说明</div>
+          <div class="desc">一早湖面最静、晨雾出片。<b>包船 200-240 元/船（3人+狗一条船）</b>，玩约 1.5 小时；<b>我们包船可以带狗</b>（拼船不一定让上），上船让狗趴下、牵紧绳。前一晚请民宿老板帮忙约第二天 8:30 的船。</div>
+        </div>
+        <div class="stop">
+          <div class="stop-title">🏝️ 里格半岛·两种玩法（看 D3 下午情况二选一）</div>
+          <div class="desc"><b>方案A（D3 没去成里格观景台）：</b>先上<b>里格观景台</b>拍经典心形半岛全景，再下山逛半岛到码头边，约 1h。<br><b>方案B（D3 下午已上过观景台）：</b>直接开车下山逛<b>里格半岛村落+湖边码头</b>，约 40min，不重复爬观景台。</div>
+        </div>
         <div class="notice-box tips">
-          <div class="notice-head">💡 小贴士</div>
+          <div class="notice-head">💡 贴士</div>
           <div class="notice-body">
-            <div>🐕 走婚桥和草海最适合遛狗拍照！猪槽船狗不能上。</div>
+            <div>🐕 草海、走婚桥、两个情人滩最适合遛狗拍照，全程牵绳即可。</div>
+            <div>⛰️ 格姆女神山<b>不坐索道</b>——我们开车环湖，在尼塞村湖边拍山就行，把时间留给湖湾。</div>
+            <div>🚗 女神湾进出同一条 021 乡道，路窄弯多注意会车；环湖公路临湖弯多，控制车速。</div>
           </div>
         </div>
-        <div class="detail-placeholder">（待补充：环湖具体路线、坐船点、拍照点、时间安排等）</div>
       </div>
     </div>
 
@@ -427,8 +482,8 @@
     <div class="panel food">
       <div class="panel-header">🍽️ 大落水村晚餐（5家·村内步行可达·可随意挑选） <span class="arrow">▶</span></div>
       <div class="panel-body">
-        <div class="stop">
-          <div class="stop-title">🐟 摩梭人家菌香土鸡石锅鱼 <span class="tag food">石锅鱼</span></div>
+        <div class="stop rec-stop">
+          <div class="stop-title">🐟 摩梭人家菌香土鸡石锅鱼 <span class="tag food">石锅鱼</span><span class="tag rec">👍 大家推荐</span></div>
           <div class="desc">大落水村十字路口·09:00-23:30·⭐4.6·人均¥59</div>
           <a class="nav-btn" href="https://uri.amap.com/navigation?to=100.773037,27.677030,摩梭人家菌香土鸡石锅鱼&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航</a>
         </div>
@@ -470,7 +525,6 @@
         <div class="stop">
           <div class="stop-title">🏨 醉花堂客栈（束河古镇店） <span class="tag hotel">住宿</span></div>
           <div class="desc">3晚¥948 · 就在古镇里</div>
-          <a class="nav-btn" href="https://uri.amap.com/navigation?to=100.206366,26.925130,醉花堂客栈&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航到客栈</a>
           <div class="charge">⚡ <strong>充电：</strong>束河古镇3号停车场·南方电网桩（龙泉路与仁里路交叉口，~90m）·24h ⭐4.7</div>
           <a class="nav-btn charge-btn" href="https://uri.amap.com/navigation?to=100.205946,26.924410,束河古镇3号停车场充电桩&mode=car&src=云南自驾&coordinate=gaode&callnative=1">⚡ 导航到充电站</a>
         </div>
@@ -485,65 +539,140 @@
           <div class="desc">8:00 泸沽湖出发 → 约 12:00 到束河（3号停车场插枪+放行李）→ 12:20 北门午饭 → <b>13:30-16:00 古镇 citywalk（北门进、南门出，不走回头路）</b>→ 16:20 走回客栈遛狗休整</div>
         </div>
         <div class="tip">🚶 <b>下午按①→⑪顺序走，全程约 1.3km 石板平路，慢慢逛 2.5 小时（含歇脚）</b></div>
+<div class="map-wrap" style="margin:10px 0;">
+          <svg viewBox="0 0 380 1040" width="100%" role="img" aria-label="束河古镇citywalk路线示意图" style="display:block;">
+            <rect x="6" y="6" width="368" height="1000" rx="14" fill="#eaf4e8" stroke="#cde2c8" stroke-width="2"/>
+            <!-- 九鼎龙潭 -->
+            <ellipse cx="72" cy="183" rx="24" ry="15" fill="#8fd3ea" stroke="#5fb8d8" stroke-width="2"/>
+            <!-- 青龙河 -->
+            <path d="M 92,446 C 112,520 116,580 140,655 C 150,720 155,790 163,875 C 167,925 169,955 169,986"
+                  fill="none" stroke="#a8dff3" stroke-width="11" stroke-linecap="round" opacity="0.85"/>
+            <text x="118" y="560" font-size="10" fill="#3a8fb0" transform="rotate(12 118 560)">青龙河</text>
+            <!-- 返程路底 -->
+            <path d="M 169,982 C 248,958 300,800 308,560 C 314,360 315,180 315,84"
+                  fill="none" stroke="#e7dcc2" stroke-width="13" stroke-linecap="round"/>
+            <path d="M 169,982 C 248,958 300,800 308,560 C 314,360 315,180 315,84"
+                  fill="none" stroke="#9aa0a6" stroke-width="3" stroke-dasharray="7 7" stroke-linecap="round"/>
+            <!-- 主街路底 -->
+            <path d="M 317,190 L 88,188 M 70,178 L 36,256 L 28,308 L 22,372 L 17,408 L 86,436 M 89,438 L 140,656 L 161,856 L 167,970"
+                  fill="none" stroke="#efe0c2" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- 主路线 -->
+            <path d="M 317,190 L 86,188 M 82,186 L 60,178 M 78,190 L 36,258 L 28,310 L 22,374 L 17,410 L 86,436 M 89,438 L 140,656 L 161,856 L 167,970"
+                  fill="none" stroke="#ff6a00" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- 客栈 -->
+            <rect x="302" y="38" width="27" height="27" rx="6" fill="#27ae60"/>
+            <text x="315.5" y="57" font-size="14" fill="#fff" text-anchor="middle" font-weight="700">宿</text>
+            <text x="296" y="44" font-size="12" fill="#2c3e50" text-anchor="end" font-weight="700"
+                  style="paint-order:stroke;stroke:#fff;stroke-width:4px;">醉花堂客栈</text>
+            <text x="296" y="60" font-size="10" fill="#5b8a4a" text-anchor="end">出发/返回</text>
+            <!-- 指北针 -->
+            <circle cx="345" cy="42" r="17" fill="#fff" stroke="#cfd8d2"/>
+            <text x="345" y="36" font-size="9" fill="#888" text-anchor="middle">N</text>
+            <path d="M 345,52 L 340,43 L 345,46 L 350,43 Z" fill="#e94f37"/>
+            <!-- 点位 -->
+            <circle cx="317" cy="190" r="13.5" fill="#fff" stroke="#ff6a00" stroke-width="3"/>
+            <text x="317" y="195" font-size="13" fill="#ff6a00" text-anchor="middle" font-weight="700">①</text>
+            <circle cx="57" cy="176" r="13.5" fill="#fff" stroke="#ff6a00" stroke-width="3"/>
+            <text x="57" y="181" font-size="13" fill="#ff6a00" text-anchor="middle" font-weight="700">②</text>
+            <circle cx="83" cy="188" r="13.5" fill="#fff" stroke="#ff6a00" stroke-width="3"/>
+            <text x="83" y="193" font-size="13" fill="#ff6a00" text-anchor="middle" font-weight="700">③</text>
+            <circle cx="33" cy="261" r="13.5" fill="#fff" stroke="#ff6a00" stroke-width="3"/>
+            <text x="33" y="266" font-size="13" fill="#ff6a00" text-anchor="middle" font-weight="700">④</text>
+            <circle cx="25" cy="311" r="13.5" fill="#fff" stroke="#ff6a00" stroke-width="3"/>
+            <text x="25" y="316" font-size="13" fill="#ff6a00" text-anchor="middle" font-weight="700">⑤</text>
+            <circle cx="20" cy="378" r="13.5" fill="#fff" stroke="#ff6a00" stroke-width="3"/>
+            <text x="20" y="383" font-size="13" fill="#ff6a00" text-anchor="middle" font-weight="700">⑥</text>
+            <circle cx="15" cy="411" r="13.5" fill="#fff" stroke="#ff6a00" stroke-width="3"/>
+            <text x="15" y="416" font-size="13" fill="#ff6a00" text-anchor="middle" font-weight="700">⑦</text>
+            <circle cx="89" cy="438" r="13.5" fill="#fff" stroke="#ff6a00" stroke-width="3"/>
+            <text x="89" y="443" font-size="13" fill="#ff6a00" text-anchor="middle" font-weight="700">⑧</text>
+            <circle cx="140" cy="659" r="13.5" fill="#fff" stroke="#ff6a00" stroke-width="3"/>
+            <text x="140" y="664" font-size="13" fill="#ff6a00" text-anchor="middle" font-weight="700">⑨</text>
+            <circle cx="162" cy="859" r="13.5" fill="#fff" stroke="#ff6a00" stroke-width="3"/>
+            <text x="162" y="864" font-size="13" fill="#ff6a00" text-anchor="middle" font-weight="700">⑩</text>
+            <circle cx="169" cy="974" r="13.5" fill="#fff" stroke="#ff6a00" stroke-width="3"/>
+            <text x="169" y="979" font-size="13" fill="#ff6a00" text-anchor="middle" font-weight="700">⑪</text>
+            <text x="305" y="176" font-size="12" fill="#2c3e50" text-anchor="end" font-weight="600"
+                  style="paint-order:stroke;stroke:#fff;stroke-width:4px;">北门·粗茶淡饭午饭</text>
+            <text x="102" y="178" font-size="12" fill="#2c3e50" text-anchor="start" font-weight="600"
+                  style="paint-order:stroke;stroke:#fff;stroke-width:4px;">龙泉寺</text>
+            <text x="102" y="194" font-size="12" fill="#2c3e50" text-anchor="start" font-weight="600"
+                  style="paint-order:stroke;stroke:#fff;stroke-width:4px;">九鼎龙潭</text>
+            <text x="50" y="265" font-size="12" fill="#2c3e50" text-anchor="start" font-weight="600"
+                  style="paint-order:stroke;stroke:#fff;stroke-width:4px;">茶马王故居</text>
+            <text x="42" y="315" font-size="12" fill="#2c3e50" text-anchor="start" font-weight="600"
+                  style="paint-order:stroke;stroke:#fff;stroke-width:4px;">白马龙潭三眼井</text>
+            <text x="37" y="374" font-size="12" fill="#2c3e50" text-anchor="start" font-weight="600"
+                  style="paint-order:stroke;stroke:#fff;stroke-width:4px;">虎牙咖啡（歇脚·自选）</text>
+            <text x="32" y="406" font-size="12" fill="#2c3e50" text-anchor="start" font-weight="600"
+                  style="paint-order:stroke;stroke:#fff;stroke-width:4px;">茶马古道博物馆</text>
+            <text x="106" y="434" font-size="12" fill="#2c3e50" text-anchor="start" font-weight="600"
+                  style="paint-order:stroke;stroke:#fff;stroke-width:4px;">青龙桥</text>
+            <text x="157" y="655" font-size="12" fill="#2c3e50" text-anchor="start" font-weight="600"
+                  style="paint-order:stroke;stroke:#fff;stroke-width:4px;">飞花触水</text>
+            <text x="179" y="864" font-size="12" fill="#2c3e50" text-anchor="start" font-weight="600"
+                  style="paint-order:stroke;stroke:#fff;stroke-width:4px;">三眼井</text>
+            <text x="186" y="970" font-size="12" fill="#2c3e50" text-anchor="start" font-weight="600"
+                  style="paint-order:stroke;stroke:#fff;stroke-width:4px;">四方听音 → 南门</text>
+            <!-- 图例 -->
+            <line x1="24" y1="1014" x2="60" y2="1014" stroke="#ff6a00" stroke-width="3.5" stroke-linecap="round"/>
+            <text x="66" y="1018" font-size="11" fill="#666">按①→⑪步行（北门进南门出）</text>
+            <line x1="230" y1="1014" x2="266" y2="1014" stroke="#9aa0a6" stroke-width="3" stroke-dasharray="7 7"/>
+            <text x="272" y="1018" font-size="11" fill="#666">逛完走回客栈20min</text>
+          </svg>
+        </div>
+        <div class="desc">🗺️ 示意图按真实地理位置绘制（北↑）：上午从客栈走到北门，沿北侧龙泉寺、九鼎龙潭一路向南，最后到南门四方听音；<b>灰色虚线是逛完回客栈的路</b>（十和路→仁里路，沿青龙河走）。</div>
+        <a class="nav-btn" style="background:#ff6a00;box-shadow:0 2px 8px rgba(255,106,0,.35);" href="https://uri.amap.com/navigation?from=100.206388,26.923889,束河北门&via=100.203925,26.923975;100.203405,26.922200;100.204611,26.919669&to=100.204901,26.916836,四方听音广场南门&mode=walk&src=云南自驾&coordinate=gaode&callnative=1">🚶 一键导航全程（北门→南门·自动经过龙潭/虎牙/飞花触水）</a>
+        <a class="nav-btn home" href="https://uri.amap.com/navigation?to=100.206366,26.925130,醉花堂客栈&mode=walk&src=云南自驾&coordinate=gaode&callnative=1">🔙 逛完步行导航回客栈</a>
+        <div class="tip">📱 点橙色按钮会<b>自动唤起高德步行导航</b>，已内置 3 个途径点（九鼎龙潭、虎牙咖啡、飞花触水），跟着主街走、对照示意图编号即可，不用一个个点定位。</div>
         <div class="stop">
           <div class="stop-title">① 束河北门（起点·午饭） <span class="tag">起点</span></div>
           <div class="desc">北门牌坊旁「粗茶淡饭」吃午饭（见吃饭面板），吃完从北门进古镇</div>
-          <a class="nav-btn" href="https://uri.amap.com/marker?position=100.206388,26.923889&name=束河古镇北门&src=云南自驾&coordinate=gaode&callnative=1">📍 高德定位北门</a>
         </div>
         <div class="stop">
           <div class="stop-title">② 龙泉寺（三圣宫）</div>
           <div class="desc">进门沿溪走几分钟即到，08:30-17:30，和九鼎龙潭挨着</div>
-          <a class="nav-btn" href="https://uri.amap.com/marker?position=100.203858,26.923901&name=龙泉寺三圣宫&src=云南自驾&coordinate=gaode&callnative=1">📍 高德定位</a>
         </div>
         <div class="stop">
           <div class="stop-title">③ 九鼎龙潭 <span class="tag photo">📸 最出片</span></div>
           <div class="desc">⭐4.7·一汪碧绿深潭倒映古树屋檐，束河第一名片，多拍几张</div>
-          <a class="nav-btn" href="https://uri.amap.com/marker?position=100.203925,26.923975&name=九鼎龙潭&src=云南自驾&coordinate=gaode&callnative=1">📍 高德定位</a>
         </div>
         <div class="stop">
           <div class="stop-title">④ 茶马王故居纪念馆</div>
           <div class="desc">仁里路挑水巷2号，马帮头子老宅，小院安静</div>
-          <a class="nav-btn" href="https://uri.amap.com/marker?position=100.203527,26.923248&name=茶马王故居纪念馆&src=云南自驾&coordinate=gaode&callnative=1">📍 高德定位</a>
         </div>
         <div class="stop">
           <div class="stop-title">⑤ 白马龙潭三眼井</div>
           <div class="desc">纳西古泉「一井三潭」，泉水依次饮用、洗菜、洗衣，还在用</div>
-          <a class="nav-btn" href="https://uri.amap.com/search?keyword=束河古镇白马龙潭三眼井&city=丽江&src=云南自驾&callnative=1">📍 高德搜索定位</a>
         </div>
         <div class="stop">
           <div class="stop-title">⑥ ☕ 沿途咖啡馆（自选歇脚） <span class="tag">约30分钟</span></div>
           <div class="desc">路线走到一半，<b>走累了就进一家，不强制</b>。推荐<b>虎牙咖啡馆</b>（仁里路菜园巷1号·10:00-20:00·⭐4.6·人均¥46，小院有猫）；清泉路、飞花触水一带咖啡馆很多，看见喜欢的随便换</div>
-          <a class="nav-btn" href="https://uri.amap.com/marker?position=100.203405,26.922200&name=虎牙咖啡馆&src=云南自驾&coordinate=gaode&callnative=1">📍 虎牙咖啡定位</a>
+          <a class="nav-btn" href="https://uri.amap.com/marker?position=100.203405,26.922200&name=虎牙咖啡馆&src=云南自驾&coordinate=gaode&callnative=1">☕ 想喝咖啡时点这里定位虎牙</a>
         </div>
         <div class="stop">
           <div class="stop-title">⑦ 茶马古道博物馆 · 老四方街</div>
           <div class="desc">高德标注<b>暂停开放</b>，不开就门口拍张照，接着逛老四方街，不特意等</div>
-          <a class="nav-btn" href="https://uri.amap.com/search?keyword=束河古镇茶马古道博物馆&city=丽江&src=云南自驾&callnative=1">📍 高德搜索定位</a>
         </div>
         <div class="stop">
           <div class="stop-title">⑧ 青龙桥 <span class="tag photo">📸 古石桥</span></div>
           <div class="desc">⭐4.7·400多年的石板古桥，桥上桥下都好拍</div>
-          <a class="nav-btn" href="https://uri.amap.com/marker?position=100.204096,26.921657&name=青龙桥&src=云南自驾&coordinate=gaode&callnative=1">📍 高德定位</a>
         </div>
         <div class="stop">
           <div class="stop-title">⑨ 飞花触水 <span class="tag photo">📸 水潭</span></div>
           <div class="desc">⭐4.6·水潭+水车+酒吧街，最热闹的一段</div>
-          <a class="nav-btn" href="https://uri.amap.com/marker?position=100.204611,26.919669&name=飞花触水&src=云南自驾&coordinate=gaode&callnative=1">📍 高德定位</a>
         </div>
         <div class="stop">
           <div class="stop-title">⑩ 三眼井</div>
           <div class="desc">⭐4.3·又一处三潭清泉，「云在水中走」的倒影景</div>
-          <a class="nav-btn" href="https://uri.amap.com/marker?position=100.204833,26.917871&name=束河三眼井&src=云南自驾&coordinate=gaode&callnative=1">📍 高德定位</a>
         </div>
         <div class="stop">
           <div class="stop-title">⑪ 四方听音广场 → 南门（终点） <span class="tag">终点</span></div>
           <div class="desc">⭐4.7·鼓楼大广场，走到南门整条路线结束，约 16:00</div>
-          <a class="nav-btn" href="https://uri.amap.com/marker?position=100.204901,26.916836&name=四方听音广场&src=云南自驾&coordinate=gaode&callnative=1">📍 高德定位</a>
         </div>
         <div class="stop">
           <div class="stop-title">🔙 走回客栈（约20分钟）</div>
           <div class="desc">南门出来沿<b>十和路 → 仁里路</b>往北走 1.5km 回醉花堂，一路小溪相伴就是清泉路街景，等于再补一段拍照；不想走也可在南门叫车</div>
-          <a class="nav-btn" href="https://uri.amap.com/navigation?to=100.206366,26.925130,醉花堂客栈&mode=walk&src=云南自驾&coordinate=gaode&callnative=1">🚶 步行导航回客栈</a>
         </div>
         <div class="notice-box tips" style="margin-top:12px;">
           <div class="notice-head">🐕 带狗 & 贴士</div>
@@ -564,8 +693,8 @@
           <div class="desc">束河北门牌坊旁瑞幸咖啡边·10:00-22:00·⭐4.1·人均¥71</div>
           <a class="nav-btn" href="https://uri.amap.com/navigation?to=100.206388,26.923889,粗茶淡饭束河古镇店&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航</a>
         </div>
-        <div class="stop">
-          <div class="stop-title">🥬 朵颐菜园 <span class="tag food">云南菜</span></div>
+        <div class="stop rec-stop">
+          <div class="stop-title">🥬 朵颐菜园 <span class="tag food">云南菜</span><span class="tag rec">👍 大家推荐</span></div>
           <div class="desc">仁里路1号·11:00-21:30·⭐4.5·人均¥58</div>
           <a class="nav-btn" href="https://uri.amap.com/navigation?to=100.203653,26.922870,朵颐菜园&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航</a>
         </div>
@@ -866,12 +995,12 @@
       <div class="panel-header">🍜 午饭（两家任选） <span class="arrow">▶</span></div>
       <div class="panel-body">
         <div class="stop">
-          <div class="stop-title">A · 乡间小味食馆（西景线店） <span class="tag food">约12:00</span></div>
+          <div class="stop-title">A · 乡间小味食馆（西景线店） <span class="tag food">约12:00</span><span class="tag rec">👍 大家推荐</span></div>
           <div class="desc">虎跳峡镇下桥头村河西路中桥段·G214西景线沿线（出景区7.6km，去虎香公路的岔口旁）·09:00-20:00·⭐4.2·**早吃完早上路**</div>
           <a class="nav-btn" href="https://uri.amap.com/navigation?to=100.051457,27.186050,乡间小味食馆西景线店&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航乡间小味</a>
         </div>
         <div class="stop">
-          <div class="stop-title">B · 田元饭店（三坝纳西族乡） <span class="tag food">约12:40</span></div>
+          <div class="stop-title">B · 田元饭店（三坝纳西族乡） <span class="tag food">约12:40</span><span class="tag rec">👍 大家推荐</span></div>
           <div class="desc">去白水台的虎香公路路边，经过三坝乡时吃·07:00-23:00·⭐4.6·人均¥36·纳西族乡家常菜，**评分高、便宜**</div>
           <a class="nav-btn" href="https://uri.amap.com/navigation?to=100.203575,27.308475,田元饭店&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航田元饭店</a>
         </div>
@@ -883,7 +1012,7 @@
       <div class="panel-body">
         <div class="warn">⚠️ <b>第一晚别吃牦牛火锅，容易高反！</b>吃米线/炒菜清淡为主，火锅留到明晚。</div>
         <div class="stop">
-          <div class="stop-title">① 老仓醋米线（古城店） <span class="tag food">米线</span></div>
+          <div class="stop-title">① 老仓醋米线（古城店） <span class="tag food">米线</span><span class="tag rec">👍 大家推荐</span></div>
           <div class="desc">达娃路20号·⭐4.5·人均¥19·07:00-24:00·**他家醋很好喝**，但卫生条件一般</div>
           <a class="nav-btn" href="https://uri.amap.com/navigation?to=99.708979,27.814453,老仓醋米线古城店&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航①老仓醋米线</a>
         </div>
@@ -955,7 +1084,7 @@
       <div class="panel-body">
         <div class="stop">
           <div class="stop-title">🌅 选方案A纳帕海：3选1 <span class="tag food">方案A</span></div>
-          <div class="desc">① <b>霸赛黑牦牛烧烤店</b>（纳帕海环湖路·释然居民宿东北250m）⭐4.1·人均¥13·**牦牛肉串配小饼，小红书很多人推荐，可以买两串尝尝**<br>② <b>成都冬雪川菜馆</b>（市区东旺路75号金桥向阳菜市场）⭐4.1·10:30-22:00<br>③ <b>红火小馆</b>（市区华骏广场2栋）⭐4.6·人均¥70·10:30-22:00<br>（②③在市区，去纳帕海前或回城后吃）</div>
+          <div class="desc">① <b>霸赛黑牦牛烧烤店</b>（纳帕海环湖路·释然居民宿东北250m）⭐4.1·人均¥13·**牦牛肉串配小饼，小红书很多人推荐，可以买两串尝尝**<br>② <b>成都冬雪川菜馆</b><span class="tag rec" style="margin-left:4px;">👍 大家推荐</span>（市区东旺路75号金桥向阳菜市场）⭐4.1·10:30-22:00<br>③ <b>红火小馆</b>（市区华骏广场2栋）⭐4.6·人均¥70·10:30-22:00<br>（②③在市区，去纳帕海前或回城后吃）</div>
           <a class="nav-btn" href="https://uri.amap.com/navigation?to=99.632322,27.907905,霸赛黑牦牛烧烤店&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航①黑牦牛烧烤（纳帕海）</a>
           <a class="nav-btn" href="https://uri.amap.com/navigation?to=99.705535,27.824625,冬雪川菜馆&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航②冬雪川菜馆</a>
           <a class="nav-btn" href="https://uri.amap.com/navigation?to=99.702955,27.816785,红火小馆&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航③红火小馆</a>
@@ -973,12 +1102,12 @@
         <div class="tip">💡 第二晚适应海拔了，可以吃牦牛火锅。</div>
         <div class="tip">🛒 <b>今晚顺便采购：</b>明天（10/12）635km 一整天高速，在古城买好<b>明天中午的干粮和水</b>（面包/自热饭/水果/零食），明天 13:00 在云南驿服务区吃。</div>
         <div class="stop">
-          <div class="stop-title">① 马斌高原牦牛肉饭店 <span class="tag food">牦牛肉</span></div>
+          <div class="stop-title">① 马斌高原牦牛肉饭店 <span class="tag food">牦牛肉</span><span class="tag rec">👍 大家推荐</span></div>
           <div class="desc">香巴拉大道44号·⭐4.6·人均¥75·10:00-24:00</div>
           <a class="nav-btn" href="https://uri.amap.com/navigation?to=99.710478,27.829027,马斌高原牦牛肉饭店&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航①马斌牦牛肉</a>
         </div>
         <div class="stop">
-          <div class="stop-title">② 阿珂顿巴餐厅 <span class="tag food">牦牛火锅</span></div>
+          <div class="stop-title">② 阿珂顿巴餐厅 <span class="tag food">牦牛火锅</span><span class="tag rec">👍 大家推荐</span></div>
           <div class="desc">古城仓房街·⭐4.5·人均¥82·11:00-22:00·**牦牛火锅**</div>
           <a class="nav-btn" href="https://uri.amap.com/navigation?to=99.706168,27.813709,阿珂顿巴餐厅&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航②阿珂顿巴（火锅）</a>
         </div>
@@ -1062,12 +1191,12 @@
           <a class="nav-btn" href="https://uri.amap.com/navigation?to=102.668128,24.968618,乡村小榭饭店&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航①乡村小榭</a>
         </div>
         <div class="stop">
-          <div class="stop-title">② 海埂温馨饭店 <span class="tag food">昆明菜·汽锅鸡</span></div>
+          <div class="stop-title">② 海埂温馨饭店 <span class="tag food">昆明菜·汽锅鸡</span><span class="tag rec">👍 大家推荐</span></div>
           <div class="desc">金湖路·⭐4.7·人均¥75·11:00-14:00/<b>16:00-20:30</b>·**昆明家常菜，汽锅鸡拿手**·🚗 回民宿 **7.7km / 约17分钟**</div>
           <a class="nav-btn" href="https://uri.amap.com/navigation?to=102.692637,24.957240,海埂温馨饭店&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航②海埂温馨</a>
         </div>
         <div class="stop">
-          <div class="stop-title">③ 菌故·野生菌火锅（王府井滇池小镇店） <span class="tag food">见手青菌子火锅·最远</span></div>
+          <div class="stop-title">③ 菌故·野生菌火锅（王府井滇池小镇店） <span class="tag food">见手青菌子火锅·最远</span><span class="tag rec">👍 大家推荐</span></div>
           <div class="desc">环湖东路888号王府井奥莱·滇池小镇·⭐4.5·人均¥83·10:00-22:00·**见手青野生菌火锅**·🚗 回民宿 **12.0km / 约25分钟**</div>
           <a class="nav-btn" href="https://uri.amap.com/navigation?to=102.709867,24.940469,菌故野生菌火锅王府井滇池小镇店&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航③菌故菌火锅</a>
         </div>
@@ -1131,7 +1260,7 @@
           <a class="nav-btn" href="https://uri.amap.com/navigation?to=106.567983,29.636966,老板凳蹄花汤融创金贸时代店&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航到蹄花汤</a>
         </div>
         <div class="stop">
-          <div class="stop-title">🐔 尖山酸菜鸡（鸳鸯总店） <span class="tag food">颜海涵强推·不排队</span></div>
+          <div class="stop-title">🐔 尖山酸菜鸡（鸳鸯总店） <span class="tag food">颜海涵强推·不排队</span><span class="tag rec">👍 大家推荐</span></div>
           <div class="desc">鸳鸯北路22号·09:00-21:00·✅ 不排队·~4.3km</div>
           <a class="nav-btn" href="https://uri.amap.com/navigation?to=106.555738,29.665284,尖山酸菜鸡鸳鸯总店&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航到酸菜鸡</a>
         </div>
@@ -1291,7 +1420,7 @@
         </div>
         <div class="tip">💡 4 家都在华龙城/体育馆片区，<b>从麗枫酒店开车 9-14 分钟</b>（前三家集中在华龙城三期商业街，停一次车就能逛着选）；吃完开车回酒店。<b>合渣</b>=土家"懒豆腐"，黄豆磨浆不过滤连渣煮青菜、配十几种小菜的套餐。</div>
         <div class="stop">
-          <div class="stop-title">① 宏利烤活鱼（宣恩宏利·恩施总店） <span class="tag food">烤活鱼</span></div>
+          <div class="stop-title">① 宏利烤活鱼（宣恩宏利·恩施总店） <span class="tag food">烤活鱼</span><span class="tag rec">👍 大家推荐</span></div>
           <div class="desc">华龙城三期商业街 D124-D125·⭐4.6·人均¥60·11:00-次日03:00·🚗 离麗枫酒店 <b>2.1km / 约9分钟</b></div>
           <a class="nav-btn" href="https://uri.amap.com/navigation?to=109.484940,30.304286,宣恩宏利烤活鱼恩施总店&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航①宏利烤活鱼</a>
         </div>
