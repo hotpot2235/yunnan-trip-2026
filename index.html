@@ -148,6 +148,20 @@
   .map-legend { font-size: 11px; color: #888; margin-top: 2px; }
 
   .footer { text-align: center; padding: 16px; color: #fff; font-size: 11px; opacity: 0.7; }
+
+  /* ========== 图片点击放大 ========== */
+  .img-lightbox { display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+                  background:rgba(0,0,0,0.95); z-index:9999; overflow:auto;
+                  -webkit-overflow-scrolling:touch; }
+  .img-lightbox.open { display:flex; align-items:center; justify-content:center; }
+  .img-lightbox img { max-width:100%; max-height:100%; object-fit:contain;
+                      transition:transform 0.15s ease; transform-origin:center center; }
+  .lb-close { position:fixed; top:12px; right:12px; color:#fff; font-size:22px;
+              width:40px; height:40px; display:flex; align-items:center; justify-content:center;
+              background:rgba(255,255,255,0.25); border-radius:50%; cursor:pointer; z-index:10001; }
+  .zoomable { cursor:pointer; position:relative; }
+  .zoomable-hint { position:absolute; bottom:6px; right:6px; background:rgba(0,0,0,0.5); color:#fff;
+                   font-size:11px; padding:2px 8px; border-radius:10px; pointer-events:none; }
 </style>
 </head>
 <body>
@@ -357,8 +371,8 @@
     <div class="panel food">
       <div class="panel-header">🍽️ 大落水村晚餐（按村内步行可达排序，第4家需开车） <span class="arrow">▶</span></div>
       <div class="panel-body">
-        <div class="stop">
-          <div class="stop-title">🐟 菌香小院·蒸汽石锅鱼·野生菌 <span class="tag food">石锅鱼</span></div>
+        <div class="stop rec-stop">
+          <div class="stop-title">🐟 菌香小院·蒸汽石锅鱼·野生菌 <span class="tag food">石锅鱼</span><span class="tag rec">👍 大家推荐</span></div>
           <div class="desc">大洛水村母系缘酒店旁·09:00-22:30·⭐4.7·人均¥68·**洋芋锅巴饭必点，需排队建议17:30前去**</div>
           <a class="nav-btn" href="https://uri.amap.com/navigation?to=100.773439,27.677923,菌香小院蒸汽石锅鱼&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航</a>
         </div>
@@ -593,8 +607,8 @@
     <div class="panel food">
       <div class="panel-header">🍽️ 大落水村晚餐（5家·村内步行可达·可随意挑选） <span class="arrow">▶</span></div>
       <div class="panel-body">
-        <div class="stop rec-stop">
-          <div class="stop-title">🐟 摩梭人家菌香土鸡石锅鱼 <span class="tag food">石锅鱼</span><span class="tag rec">👍 大家推荐</span></div>
+        <div class="stop">
+          <div class="stop-title">🐟 摩梭人家菌香土鸡石锅鱼 <span class="tag food">石锅鱼</span></div>
           <div class="desc">大落水村十字路口·09:00-23:30·⭐4.6·人均¥59</div>
           <a class="nav-btn" href="https://uri.amap.com/navigation?to=100.773037,27.677030,摩梭人家菌香土鸡石锅鱼&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航</a>
         </div>
@@ -884,8 +898,8 @@
     <div class="panel food">
       <div class="panel-header">🍽️ 晚饭（按回束河由近到远排序） <span class="arrow">▶</span></div>
       <div class="panel-body">
-        <div class="stop">
-          <div class="stop-title">🥩 华坪炒滑肉（四季家园店·回束河最近） <span class="tag food">快餐</span></div>
+        <div class="stop rec-stop">
+          <div class="stop-title">🥩 华坪炒滑肉（四季家园店·回束河最近） <span class="tag food">快餐</span><span class="tag rec">👍 大家推荐</span></div>
           <div class="desc">束河街道雪山路上段四季家园A区6号·11:00-20:30·⭐4.5·人均¥37</div>
           <a class="nav-btn" href="https://uri.amap.com/navigation?to=100.215045,26.889996,华坪炒滑肉四季家园店&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航</a>
         </div>
@@ -894,8 +908,8 @@
           <div class="desc">西安街中段河西143号·07:00-22:00·⭐4.6·人均¥109·束河南约6km</div>
           <a class="nav-btn" href="https://uri.amap.com/navigation?to=100.212708,26.874584,永宁摩梭人家&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航</a>
         </div>
-        <div class="stop">
-          <div class="stop-title">🌶️ 小辣椒川菜馆（吉上路店） <span class="tag food">川菜</span></div>
+        <div class="stop rec-stop">
+          <div class="stop-title">🌶️ 小辣椒川菜馆（吉上路店） <span class="tag food">川菜</span><span class="tag rec">👍 大家推荐</span></div>
           <div class="desc">吉祥园酒店旁·09:00-21:30·⭐4.5·人均¥73·**老板态度一般但饭好吃：炒空心菜/兔肉/生爆肥肠**</div>
           <a class="nav-btn" href="https://uri.amap.com/navigation?to=100.231272,26.856357,小辣椒川菜馆吉上路店&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航</a>
         </div>
@@ -1008,8 +1022,8 @@
     <div class="panel food">
       <div class="panel-header">🌙 晚饭（下山后·白沙/束河） <span class="arrow">▶</span></div>
       <div class="panel-body">
-        <div class="stop">
-          <div class="stop-title">🍜 李家土鸡米线白沙店 <span class="tag food">米线</span></div>
+        <div class="stop rec-stop">
+          <div class="stop-title">🍜 李家土鸡米线白沙店 <span class="tag food">米线</span><span class="tag rec">👍 大家推荐</span></div>
           <div class="desc">白沙派出所北门东北50米·08:00-20:00·⭐4.2·人均¥14·约14:30下山逛白沙古镇时吃，吃完回束河</div>
           <a class="nav-btn" href="https://uri.amap.com/navigation?to=100.220274,26.952834,李家土鸡米线白沙店&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航</a>
         </div>
@@ -1042,12 +1056,14 @@
         </div>
         <div class="stop">
           <div class="stop-title">📸 实拍路线图（照着开就行）</div>
-          <div class="map-wrap" style="max-width:340px;margin:8px auto 4px;">
+          <div class="map-wrap zoomable" style="max-width:340px;margin:8px auto 4px;">
             <img src="assets/hutiaoxia-1.jpeg" alt="虎跳峡游客中心到检票处路线实拍">
+            <div class="zoomable-hint">🔍 点击放大</div>
           </div>
           <div class="desc">图1：<b>左手边游客中心</b>买票和停车券 → 沿路继续往前开 → <b>走右边，别进左边隧道</b>，右边工作人员验票、在票上打孔后，开车进去顺着往里开就是景区停车场。</div>
-          <div class="map-wrap" style="max-width:340px;margin:10px auto 4px;">
+          <div class="map-wrap zoomable" style="max-width:340px;margin:10px auto 4px;">
             <img src="assets/hutiaoxia-2.jpeg" alt="上虎跳检票处岔路口实拍">
+            <div class="zoomable-hint">🔍 点击放大</div>
           </div>
           <div class="desc">图2：检票处前的岔路口——<b>左上是隧道方向（别走）</b>，<b>走右边景区方向</b>，入口有工作人员检票，里面就是停车场。景区 08:00-17:30（17:30 停止入园）。</div>
         </div>
@@ -1701,13 +1717,13 @@
           <div class="desc">华龙城三期商业街 107-110·⭐4.5·人均¥38·09:30-22:00·🚗 离酒店 <b>约2.2km / 9分钟</b></div>
           <a class="nav-btn" href="https://uri.amap.com/navigation?to=109.485410,30.305196,憨嘎婆土家合渣华龙城店&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航②憨嘎婆合渣</a>
         </div>
-        <div class="stop">
-          <div class="stop-title">③ 红彬家·麻辣串火锅（华龙城店） <span class="tag food">串串火锅</span></div>
+        <div class="stop rec-stop">
+          <div class="stop-title">③ 红彬家·麻辣串火锅（华龙城店） <span class="tag food">串串火锅</span><span class="tag rec">👍 大家推荐</span></div>
           <div class="desc">莲湖花园3期 D 栋商业街 113-114·⭐4.4·人均¥74·11:00-次日06:00·🚗 离酒店 <b>约2.2km / 9分钟</b></div>
           <a class="nav-btn" href="https://uri.amap.com/navigation?to=109.485142,30.304780,红彬家麻辣串火锅华龙城店&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航③红彬串串</a>
         </div>
-        <div class="stop">
-          <div class="stop-title">④ 玲玲餐馆（体育馆路店·鸭沫） <span class="tag food">鸭沫面</span></div>
+        <div class="stop rec-stop">
+          <div class="stop-title">④ 玲玲餐馆（体育馆路店·鸭沫） <span class="tag food">鸭沫面</span><span class="tag rec">👍 大家推荐</span></div>
           <div class="desc">大桥路一巷86号·⭐4.5·人均¥43·11:00-21:00·🚗 离酒店 <b>4.3km / 约14分钟</b>。⚠️ 高德没有"玲玲鸭沫"这个店名，按玲玲餐馆（主打鸭沫）定位，<b>去之前请再核实店名地址</b>。鸭沫=恩施特色鸭肉沫杂酱面。</div>
           <a class="nav-btn" href="https://uri.amap.com/navigation?to=109.481846,30.283289,玲玲餐馆体育馆路店&mode=car&src=云南自驾&coordinate=gaode&callnative=1">📍 高德导航④玲玲鸭沫（待核实）</a>
         </div>
@@ -1908,7 +1924,72 @@ document.addEventListener('keydown', function(e) {
   if (e.key === 'ArrowLeft') switchDay(-1);
   if (e.key === 'ArrowRight') switchDay(1);
 });
+
+// ========== 图片点击放大 ==========
+var lb = document.getElementById('imgLightbox');
+var lbImg = document.getElementById('lbImg');
+var lbScale = 1;
+var lastPinchDist = 0;
+
+document.querySelectorAll('.zoomable').forEach(function(el) {
+  el.addEventListener('click', function() {
+    var img = el.tagName === 'IMG' ? el : el.querySelector('img');
+    if (!img) return;
+    lbImg.src = img.src;
+    lbScale = 1;
+    lbImg.style.transform = 'scale(1)';
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+function closeLightbox() {
+  lb.classList.remove('open');
+  document.body.style.overflow = '';
+  lbScale = 1;
+  lbImg.style.transform = 'scale(1)';
+}
+
+lb.addEventListener('click', function(e) {
+  if (e.target === lb || e.target.classList.contains('lb-close')) closeLightbox();
+});
+
+// 双指捏合缩放
+lbImg.addEventListener('touchstart', function(e) {
+  if (e.touches.length === 2) {
+    e.preventDefault();
+    lastPinchDist = Math.hypot(
+      e.touches[0].clientX - e.touches[1].clientX,
+      e.touches[0].clientY - e.touches[1].clientY
+    );
+  }
+}, {passive: false});
+lbImg.addEventListener('touchmove', function(e) {
+  if (e.touches.length === 2) {
+    e.preventDefault();
+    var dist = Math.hypot(
+      e.touches[0].clientX - e.touches[1].clientX,
+      e.touches[0].clientY - e.touches[1].clientY
+    );
+    lbScale = Math.max(0.5, Math.min(5, lbScale * dist / lastPinchDist));
+    lbImg.style.transform = 'scale(' + lbScale + ')';
+    lastPinchDist = dist;
+  }
+}, {passive: false});
+
+// 双击切换缩放
+lbImg.addEventListener('dblclick', function(e) {
+  e.stopPropagation();
+  lbScale = lbScale > 1 ? 1 : 2.5;
+  lbImg.style.transform = 'scale(' + lbScale + ')';
+});
 </script>
+
+<!-- 图片放大弹窗 -->
+<div class="img-lightbox" id="imgLightbox">
+  <div class="lb-close" onclick="closeLightbox()">✕</div>
+  <img id="lbImg" src="" alt="放大查看">
+</div>
 
 </body>
 </html>
